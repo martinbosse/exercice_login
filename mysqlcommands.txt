@@ -1,0 +1,29 @@
+//Sur la ligne de commande, aller en root et se connecter à MySQL. 
+mysql -p
+<mot de passe>  //ATTENTION DE NE PAS FAIRE COMME AVEC PAPERSIZE
+
+create user 'someuser'@'localhost';
+SET PASSWORD FOR 'someuser'@'localhost' = PASSWORD('password');
+create database exercicelogin;
+GRANT ALL ON exercicelogin.* TO 'someuser'@'localhost';
+quit;
+
+//Avec l'utilisateur habituel du poste
+mysql -u someuser -p
+<mot de passe>
+
+show database;
+use exercicelogin;
+CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, firstname VARCHAR(32), lastname VARCHAR(32), username VARCHAR(32), email VARCHAR(32), password VARCHAR(32));
+SHOW TABLES FROM users;
+INSERT INTO exercicelogin.users (firstname, lastname, username, email, password) VALUES ("Christian", "Pineault", "christianpineault", "pineault.christian@yahoo.ca", password1);
+select * from exercicelogin.users;
+INSERT INTO exercicelogin.users (firstname, lastname, username, email, password) VALUES ("Martin", "Bosse", "martinbosse", "martin.bosse@hotmail.com", "password2");
+INSERT INTO exercicelogin.users (firstname, lastname, username, email, password) VALUES ("Martin", "Beaudry", "martinbeaudry", "martinbeaudry@hotmail.com", "password3"), ("Andrew", "Caya", "andrewcaya", "andrewscaya@hotmail.com", "password3");
+
+//Vérifications pour voir si ta table est bien là
+select * from users;
+SELECT password FROM users WHERE users.username = "christianpineault";
+use exercicelogin.users;
+quit;
+

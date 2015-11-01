@@ -95,12 +95,226 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html {
+   background: url('../img/El-Capitan-Mac.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+}
+.mainContainer{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.formContainer {
+   position:absolute;
+   left:50%;
+   margin-left:-400px;
+   top:50%;
+   margin-top:-150px;
+   width:800px;
+   height:300px;
+}
+form {
+    border: 2px solid white;
+    color: white;
+    
+    width: 800px;
+    height: 300px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px #000;
+    display: table-cell;
+    vertical-align: middle;
+}
+input[type=text]{
+    background: transparent;
+    border: none;
+    margin-right: 50px;
+    width: 300px;
+    border-bottom: 1px solid white;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+     -webkit-box-shadow: 0 5px 3px -3px black;
+       -moz-box-shadow: 0 5px 3px -3px black;
+            box-shadow: 0 5px 3px -3px black;
+}
+input[type=password]{
+    background: transparent;
+    border: none;
+    margin-left: 50px;
+    width: 300px;
+    border-bottom: 1px solid white;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    -webkit-box-shadow: 0 5px 3px -3px black;
+       -moz-box-shadow: 0 5px 3px -3px black;
+            box-shadow: 0 5px 3px -3px black;
+}
+input[type=submit]{
+    background: transparent;
+    border:1px solid white;
+    text-shadow: 1px 1px 1px black;
+    position: absolute;
+    bottom: 50px;
+    width: 64px;
+    left: 50%;
+    margin-left: -32px;
+    -webkit-box-shadow: 1px 1px 1px 1px black;
+       -moz-box-shadow: 1px 1px 1px 1px black;
+            box-shadow: 1px 1px 1px 1px black;
+}
+input:hover, input:focus{
+    text-shadow: 1px 1px 1px red;
+     -webkit-box-shadow: 0 5px 3px -3px red;
+       -moz-box-shadow: 0 5px 3px -3px red;
+            box-shadow: 0 5px 3px -3px red;
+}
+input[type=submit]:hover, input[type=submit]:focus {
+    text-shadow: 1px 1px 1px red;
+    -webkit-box-shadow: 1px 1px 1px 1px red;
+       -moz-box-shadow: 1px 1px 1px 1px red;
+            box-shadow: 1px 1px 1px 1px red;
+}
+::-webkit-input-placeholder {
+   color: white;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+:-ms-input-placeholder {  
+   color: white;  
+}
 
 
+/* ==========================================================================
+  welcome page
+   ========================================================================== */
+
+.mainContainer {
+    display: table;
+}
+.section1 {
+    display: table-cell;
+    vertical-align: middle;
+}
+.content{
+    text-align: center;
+}
+.content h1 {
+    font-size: 30px;
+    color: white;
+}
+.content p {
+    font-size: 16px;
+    color: white;
+}
 
 
+/* ==========================================================================
+    General
+   ========================================================================== */
+  a {
+    color: blue;
+    background: white;
+    text-decoration: none;
+    margin: 20px;
+}
+    
+a:hover {
+    color: blue;
+    background: white;
+    text-shadow: none;
+    border: none;
+    border-radius: 2px;
+}
 
+/*********************************************
+ * ROLLING LINKS
+ *********************************************/
 
+.roll {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+
+    -webkit-perspective: 300px;
+       -moz-perspective: 300px;
+        -ms-perspective: 300px;
+            perspective: 300px;
+
+    -webkit-perspective-origin: 50% 50%;
+       -moz-perspective-origin: 50% 50%;
+        -ms-perspective-origin: 50% 50%;
+            perspective-origin: 50% 50%;
+}
+.roll:hover {
+    background: none;
+    text-shadow: none;
+}
+.roll span {
+    display: block;
+    position: relative;
+    padding: 0 2px;
+    pointer-events: none;
+
+    -webkit-transition: all 600ms ease;
+       -moz-transition: all 400ms ease;
+        -ms-transition: all 400ms ease;
+            transition: all 400ms ease;
+    
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.roll:hover span {
+    background: white;
+
+    -webkit-transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+       -moz-transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+        -ms-transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+            transform: translate3d( 0px, 0px, -55px ) rotateX( 90deg );
+}
+.roll span:after {
+    content: attr(data-title);
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 1px 2px;
+    white-space: nowrap;
+
+    color: blue;
+    background: white; 
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+            transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
 
 
 

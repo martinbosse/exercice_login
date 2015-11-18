@@ -28,6 +28,11 @@ function checkLogin($user, $password) {
     //Get the result, then compare with the password given by the user
     $result = mysqli_fetch_array($passworddb);
     
+    //Patch to avoid an empty password giving access to the site.
+    if ($password == '') {
+        return false;
+    }
+    
     $login = ($password == $result[0]);
     
     //Return a boolean to say if we must open a session or not.
@@ -48,7 +53,6 @@ function getFirstName ($user) {
     
     $realname = $result[0];
     
-    var_dump($realname);
     return $realname;
     
 }

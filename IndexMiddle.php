@@ -38,7 +38,7 @@ if (isset($_POST['submit']))  {
             $nameforcookie = getFirstName($user);
             createSession($nameforcookie);
              
-            if (checkCookie()) {
+            if (checkCookie($nameforcookie)) {
                 header ("Location: frontLogin1.php");
             }
             

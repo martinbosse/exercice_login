@@ -3,6 +3,6 @@
 include 'checkLogin.php';
 
 $test = checkLogin('andrewcaya', 'password3');
-getFirstname('christianpineault');
+$firstname = getFirstname('christianpineault');
 
-var_dump($test);
+var_dump($test, $firstname);
